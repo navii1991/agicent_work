@@ -22,7 +22,7 @@ const config = new AuthServiceConfig(
       },
       {
         id: GoogleLoginProvider.PROVIDER_ID,
-        provider: new GoogleLoginProvider('1063054719053-v23ct08br1tdktkhnfsm3mobid2rob8n.apps.googleusercontent.com')
+        provider: new GoogleLoginProvider('1063054719053-0l5l7q9ia802l1oojf7ae3ai91afanmh.apps.googleusercontent.com')
       }
     ]
 );
