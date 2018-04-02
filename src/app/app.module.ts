@@ -1,6 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import {
@@ -10,6 +11,7 @@ import {
   FacebookLoginProvider,
 } from 'angular5-social-login';
 import { LoginsComponent } from './logins/logins.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 // Configs
@@ -29,14 +31,33 @@ const config = new AuthServiceConfig(
 return config;
 }
 
+const appRoutes: Routes = [
+  {
+    path: 'login',
+    component: LoginsComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginsComponent
+    LoginsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    SocialLoginModule
+    SocialLoginModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+    AngularFontAwesomeModule
   ],
   providers: [{
     provide: AuthServiceConfig,
