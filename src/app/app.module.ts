@@ -12,6 +12,7 @@ import {
 } from 'angular5-social-login';
 import { LoginsComponent } from './logins/logins.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component';
 
 
 // Configs
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
