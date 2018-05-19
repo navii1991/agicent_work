@@ -11,6 +11,7 @@ import {
   styleUrls: ['./logins.component.css']
 })
 export class LoginsComponent implements OnInit {
+  btnDisabled = false;
 
   constructor( private socialAuthService: AuthService ) {}
 

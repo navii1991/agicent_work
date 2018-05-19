@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {
   SocialLoginModule,
@@ -59,6 +59,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    FormsModule,
     AngularFontAwesomeModule
   ],
   providers: [{
